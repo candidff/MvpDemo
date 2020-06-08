@@ -1,9 +1,11 @@
 package com.example.azheng.rxjavamvpdemo.base;
 
-import androidx.lifecycle.Lifecycle;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
 
+import com.example.azheng.rxjavamvpdemo.contract.MainContract;
+
+import androidx.annotation.Nullable;
+import androidx.lifecycle.Lifecycle;
 import autodispose2.AutoDispose;
 import autodispose2.AutoDisposeConverter;
 import autodispose2.androidx.lifecycle.AndroidLifecycleScopeProvider;
@@ -15,7 +17,7 @@ import autodispose2.androidx.lifecycle.AndroidLifecycleScopeProvider;
  * Email：wei.azheng@foxmail.com
  * Description：
  */
-public abstract class BaseMvpActivity<T extends BasePresenter> extends BaseActivity implements BaseView {
+public abstract class BaseMvpActivity<T extends BasePresenter> extends BaseActivity implements MainContract.View {
 
     protected T mPresenter;
 
@@ -35,6 +37,12 @@ public abstract class BaseMvpActivity<T extends BasePresenter> extends BaseActiv
         super.onDestroy();
     }
 
+
+    @Override
+    public void onError(String errMessage) {
+
+    }
+
     /**
      * 绑定生命周期 防止MVP内存泄漏
      *
@@ -46,4 +54,6 @@ public abstract class BaseMvpActivity<T extends BasePresenter> extends BaseActiv
         return AutoDispose.autoDisposable(AndroidLifecycleScopeProvider
                 .from(this, Lifecycle.Event.ON_DESTROY));
     }
+
+
 }

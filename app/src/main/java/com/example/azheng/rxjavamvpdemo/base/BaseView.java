@@ -1,7 +1,6 @@
 package com.example.azheng.rxjavamvpdemo.base;
 
 
-
 import autodispose2.AutoDisposeConverter;
 
 /**
@@ -28,6 +27,8 @@ public interface BaseView {
      * @param errMessage
      */
     void onError(String errMessage);
+
+    void onSuccess(Object object);
 
     /**
      * 绑定Android生命周期 防止RxJava内存泄漏

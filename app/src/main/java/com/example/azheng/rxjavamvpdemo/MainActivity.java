@@ -1,18 +1,14 @@
 package com.example.azheng.rxjavamvpdemo;
 
 
-import android.os.Bundle;
-
-import com.google.android.material.textfield.TextInputEditText;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.azheng.rxjavamvpdemo.base.BaseMvpActivity;
-import com.example.azheng.rxjavamvpdemo.bean.BaseObjectBean;
 import com.example.azheng.rxjavamvpdemo.contract.MainContract;
 import com.example.azheng.rxjavamvpdemo.presenter.MainPresenter;
+import com.google.android.material.textfield.TextInputEditText;
 
 
 public class MainActivity extends BaseMvpActivity<MainPresenter> implements MainContract.View {
@@ -62,24 +58,8 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
     }
 
     @Override
-    public void onSuccess(BaseObjectBean bean) {
+    public void onSuccess(Object bean) {
 
-        Toast.makeText(this, bean.getErrorMsg(), Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
-    public void showLoading() {
-
-    }
-
-    @Override
-    public void hideLoading() {
-
-    }
-
-    @Override
-    public void onError(String errMessage) {
 
     }
 

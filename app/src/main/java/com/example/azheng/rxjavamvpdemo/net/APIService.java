@@ -3,11 +3,15 @@ package com.example.azheng.rxjavamvpdemo.net;
 
 import com.example.azheng.rxjavamvpdemo.bean.BaseObjectBean;
 import com.example.azheng.rxjavamvpdemo.bean.LoginBean;
+import com.example.azheng.rxjavamvpdemo.constant.API;
+
+import java.util.Map;
 
 import io.reactivex.rxjava3.core.Observable;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
+import retrofit2.http.QueryMap;
 
 
 /**
@@ -17,7 +21,7 @@ import retrofit2.http.POST;
  * Email：wei.azheng@foxmail.com
  * Description：
  */
-public interface APIService {
+public interface APIService extends API {
 
     /**
      * 登陆
@@ -27,8 +31,12 @@ public interface APIService {
      * @return
      */
     @FormUrlEncoded
-    @POST("user/login")
+    @POST(login)
     Observable<BaseObjectBean<LoginBean>> login(@Field("username") String username,
                                                 @Field("password") String password);
+
+    @FormUrlEncoded
+    @POST(login)
+    Observable<BaseObjectBean<LoginBean>> login(@QueryMap Map<String, String> params);
 
 }

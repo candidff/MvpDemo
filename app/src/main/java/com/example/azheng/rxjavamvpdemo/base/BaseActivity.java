@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * Email：wei.azheng@foxmail.com
  * Description：
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements BaseView {
 
 
     @Override
@@ -41,5 +41,15 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     public abstract void initView();
 
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
 
 }

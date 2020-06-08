@@ -8,11 +8,11 @@ import io.reactivex.rxjava3.core.Observable;
 
 
 /**
- * @author azheng
- * @date 2018/6/4.
- * GitHub：https://github.com/RookieExaminer
- * Email：wei.azheng@foxmail.com
- * Description：
+ * 描述：添加类的描述
+ *
+ * @author lifan
+ * @e-mail lifan@hztianque.com
+ * @time 2020/6/8
  */
 public interface MainContract {
     interface Model {
@@ -20,16 +20,6 @@ public interface MainContract {
     }
 
     interface View extends BaseView {
-        @Override
-        void showLoading();
-
-        @Override
-        void hideLoading();
-
-        @Override
-        void onError(String errMessage);
-
-        void onSuccess(BaseObjectBean<LoginBean> bean);
     }
 
     interface Presenter {

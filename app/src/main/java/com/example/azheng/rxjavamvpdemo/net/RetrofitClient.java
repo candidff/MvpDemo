@@ -1,12 +1,11 @@
 package com.example.azheng.rxjavamvpdemo.net;
 
 
-import androidx.annotation.NonNull;
-
 import com.example.azheng.rxjavamvpdemo.BuildConfig;
 
 import java.io.IOException;
 
+import androidx.annotation.NonNull;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -23,7 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * email：wei.azheng@foxmail.com
  * description：
  */
-public class RetrofitClient {
+public class RetrofitClient{
 
     private static volatile RetrofitClient instance;
     private APIService apiService;
